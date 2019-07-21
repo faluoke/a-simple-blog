@@ -10,7 +10,11 @@ export default () => (
     <div className={contactStyle.contactLink}>
       <p>
         LinkedIn:{" "}
-        <a href="https://www.linkedin.com/in/faluoke" target="_blank">
+        <a
+          href="https://www.linkedin.com/in/faluoke"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
           @faluoke
         </a>
       </p>

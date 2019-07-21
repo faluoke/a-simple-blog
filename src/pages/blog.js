@@ -10,6 +10,7 @@ export default () => {
       allContentfulBlogPost(sort: { fields: publishedDate, order: DESC }) {
         edges {
           node {
+            id
             title
             slug
             publishedDate(fromNow: true)
@@ -24,7 +25,7 @@ export default () => {
       <h1>Blog</h1>
       <ol className={blogStyle.posts}>
         {data.allContentfulBlogPost.edges.map(edge => (
-          <li className={blogStyle.post}>
+          <li key={edge.node.id} className={blogStyle.post}>
             <Link to={`blog/${edge.node.slug}/`}>
               <h2>{edge.node.title}</h2>
               <p>{edge.node.publishedDate}</p>
