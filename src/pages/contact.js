@@ -1,9 +1,11 @@
 import React from "react"
 import Layout from "../components/layout"
 import contactStyle from "./contact.module.scss"
+import Head from "../components/head"
 
 export default () => (
   <Layout>
+    <Head title="Contact" />
     <h1>Contact</h1>
     <div className={contactStyle.contactLink}>
       <p>

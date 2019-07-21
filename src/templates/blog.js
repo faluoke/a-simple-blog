@@ -1,6 +1,8 @@
 import React from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
+import Head from "../components/head"
+
 export const query = graphql`
   query($slug: String!) {
     contentfulBlogPost(slug: { eq: $slug }) {
@@ -16,6 +18,7 @@ export const query = graphql`
 export default props => {
   return (
     <Layout>
+      <Head title={props.data.contentfulBlogPost.title} />
       <h1>{props.data.contentfulBlogPost.title}</h1>
       <p>Posted: {props.data.contentfulBlogPost.publishedDate}</p>
       <p>
